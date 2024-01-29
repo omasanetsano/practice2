@@ -1,0 +1,141 @@
+// Define variables
+$primary-color: rgb(21, 21, 141);
+$secondary-color: white;
+body{
+  background-color:$secondary-color;  
+  font-size: 16px;
+
+}
+@media only screen and (max-width:600px){
+  body{
+    font: size 14px;
+  }
+}
+  @media only screen and (min-width:601px)and 
+  (max-width:900px){
+    body{
+      font-size: 18px;
+    }
+  }
+    
+  
+#signup{
+  border: 2px solid;
+  background-color:$primary-color;
+  padding: 10px;
+  width: 140px;
+  border-radius: 30px;
+  color:$secondary-color;
+
+}
+.signup:hover{
+  background-color:white;
+  color:black;
+}
+p{
+  text-align: auto;
+  font-size: large;
+  font-family: 'Times New Roman';
+  font-weight: 200px;
+  margin: 50px;
+  border: 0cap;
+  
+}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+// Define mixin for button styles
+@mixin button-styles{
+  background-color:$primary-color;
+  color: $secondary-color;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  width: 100%;
+  opacity: 1;
+  transition: 0.3s ease all;
+
+}
+
+button:hover {
+  opacity: 0.8;
+  background-color:antiquewhite;
+}
+// use nesting and mixins
+.container {
+  width: 300px;
+  padding: 16px;
+  background-color: $secondary-color;
+  margin: 0 auto;
+  margin-top: 100px;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin-bottom: 130px;
+}
+// Apply button styles mixin
+button{
+  @include button-styles
+}
+
+div.mycontainer{
+  width: 100%;
+  overflow:auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+div.mycontainer div{
+  width: 30%;
+  float: left;
+}
+img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 100px;
+}
+.responsive {
+  width: 100%;
+  height: auto;
+}
+// Extend styles
+.parent{
+    text-align: center;
+    background-color:black;
+    color: white;
+    margin-right: 50px;
+    border-radius: 20px;
+    transition:background-color 0.15s,color 0.15s;
+    cursor: pointer;
+   
+}
+.div1,.div2,.div3{
+  @extend .parent;
+}
+.div1:hover{
+  background-color:$primary-color;
+  color:$secondary-color;
+}
+.div2{
+  border: 1px solid black;
+}
+.div2:hover{
+  background-color:white;
+  color:black;
+  
+}
+.div3:hover{
+  background-color:rgb(21, 21, 141);
+  color:white;
+}
+
+
